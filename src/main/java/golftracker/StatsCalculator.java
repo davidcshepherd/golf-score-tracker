@@ -2,6 +2,7 @@ package golftracker;
 
 import java.util.ArrayList;
 import java.util.DoubleSummaryStatistics;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 
 public class StatsCalculator {
@@ -23,7 +24,7 @@ public class StatsCalculator {
         List<Double> averages = new ArrayList<>();
         for (int hole = 0; hole < 18; hole++) {
             int finalHole = hole;
-            DoubleSummaryStatistics stats = rounds.stream()
+            IntSummaryStatistics stats = rounds.stream()
                     .mapToInt(r -> r.getHoleScores().get(finalHole))
                     .summaryStatistics();
             averages.add(stats.getAverage());
