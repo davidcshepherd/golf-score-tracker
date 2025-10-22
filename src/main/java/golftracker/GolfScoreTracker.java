@@ -39,7 +39,7 @@ public class GolfScoreTracker {
         System.out.println(stats.summary());
     }
 
-    private static List<Integer> readScoresFromCsv(String filePath) throws IOException {
+    public static List<Integer> readScoresFromCsv(String filePath) throws IOException {
         List<Integer> scores = new ArrayList<>();
         try (FileReader reader = new FileReader(Paths.get(filePath).toFile());
              CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT)) {
